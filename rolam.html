@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rólam</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #ffffff;
+            background-color: #272727;
+        }
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background-color: #000000;
+            border-bottom: 1px solid #343434;
+            z-index: 1000;
+            max-height: 35px;
+        }
+        header .logo {
+            font-size: 30px;
+            font-weight: bold;
+        }
+        header .logo a {
+            text-decoration: none;
+            color: #ffffff;
+        }
+        header .logo a img {
+            display: block;
+        }
+        header .social-media {
+            display: flex;
+            align-items: center;
+            margin-right: 45px;
+        }
+        header .social-media a {
+            margin-left: 15px;
+            text-decoration: none;
+            color: #ffffff;
+        }
+        header .social-media a i {
+            font-size: 30px;
+        }
+        .content {
+            padding-top: 80px; /* To account for the fixed header height */
+            margin: 0;
+            width: 100%;
+        }
+        .about-me {
+            position: static;
+            background: url('rolamfoto.jpg') no-repeat center top;
+            background-size: cover;
+            width: 100%;
+            height: 150vh;
+            color: rgb(0, 0, 0);
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: flex-start;
+            box-sizing: border-box;
+            padding: -20px;
+            margin-top: -5px;
+        }
+        .about-me h1 {
+            width: calc(33.33% - 20px); /* Egyharmad szélességű a bal oldalon */
+            padding: 25px 50px;
+            background-color: rgba(0, 0, 0, 0);
+            margin-top: 30px;
+            font-size: 40px;
+        }
+        .about-me p {
+            width: calc(33.33% - 20px); /* Egyharmad szélességű a bal oldalon */
+            padding: 10px 50px;
+            background-color: rgba(0, 0, 0, 0);
+            font-size: 19px;
+            margin-top: -30px;
+        }
+        footer {
+            background-color: #272727;
+            border-top: 1px solid #919191;
+            padding: 10px;
+            margin: 50px;
+            text-align: left;
+            position: relative;
+            min-height: 40px;
+            max-height: 50px;
+        }
+        footer .contact-info {
+            display: inline-block;
+            text-align: left;
+        }
+        footer .contact-info2 {
+            display: flex;
+            align-items: right;
+            text-align: right;
+            justify-content: flex-end;
+            right: 20px;
+            margin-top:-45px;
+        }
+        footer .social-media {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            position: absolute;
+            bottom: -10px;
+            right: 20px;
+        }
+        footer .social-media a {
+            margin-left: 10px;
+            text-decoration: none;
+            color: #ffffff;
+        }
+        footer .social-media a i {
+            font-size: 35px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="index.html">
+                <img src="logowhite.png" alt="Logo 1">
+            </a>
+        </div>
+        <div class="social-media">
+            <a href="https://www.instagram.com/odor.marton_photography/" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.facebook.com/profile.php?id=61555350149675" target="_blank"><i class="fab fa-facebook"></i></a>
+        </div>
+    </header>
+    <div class="content">
+        <div class="about-me">
+            <h1>Szia! Én Márton vagyok</h1>
+            <p>egy szenvedélyes fotós, aki szeret pillanatokat megörökíteni. Az objektív mögött megtalálod azt a lelkes embert, aki mindent megtesz azért, hogy minden pillanat varázslatos és emlékezetes legyen. Az alkotás számomra nem csak munka, hanem egy élmény, ahol a kreativitás és a technikai hozzáértés találkozik.</p>
+            <p>A munkáim során igyekszem a valóságot egyedi perspektívából láttatni, és minden fotón keresztül egy történetet mesélni. Legyen szó természetről, portrékról vagy eseményekről, mindig arra törekszem, hogy az érzelmek és a pillanatok valósághűen jelenjenek meg a képeimen. A fények és árnyékok játékát használom a hangulat kialakításához, és mindig figyelek arra, hogy az alanyok a lehető legtermészetesebben mutatkozzanak be a fotókon.</p>
+            <p>Remélem, hogy az általam megörökített pillanatok elvarázsolnak, és egy kis részletüket megosztva veled, sikerül átadnom azt a szenvedélyt és szeretetet, amit a fotózás iránt érzek. Ha bármilyen kérdésed van, vagy szeretnél együttműködni velem, ne habozz felvenni a kapcsolatot. Köszönöm, hogy ránéztél a munkáimra, és remélem, hamarosan találkozunk egy fotózás alkalmával!</p>
+        </div>
+    </div>
+    <footer>
+        <div class="contact-info">
+            <p>Kapcsolat: </p>
+            <p>Instagram</p>
+            <p>Facebook</p>
+        </div>
+        <div class="contact-info2">
+            <p>© Ódor Márton</p>
+        </div>
+        <div class="social-media">
+            <a href="https://www.instagram.com/odor.marton_photography/" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.facebook.com/profile.php?id=61555350149675" target="_blank"><i class="fab fa-facebook"></i></a>
+        </div>
+    </footer>
+</body>
+</html>

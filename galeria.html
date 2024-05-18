@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galéria</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #ffffff;
+            background-color: #272727;
+        }
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background-color: #000000;
+            border-bottom: 1px solid #343434;
+            z-index: 1000;
+            max-height: 35px;
+        }
+        header .logo {
+            font-size: 30px;
+            font-weight: bold;
+        }
+        header .social-media {
+            display: flex;
+            align-items: center;
+            margin-right: 45px;
+        }
+        header .social-media a {
+            margin-left: 15px;
+            text-decoration: none;
+            color: #ffffff;
+        }
+        header .social-media a i {
+            font-size: 30px;
+        }
+        .content {
+            padding-top: 80px; /* To account for the fixed header height */
+            margin: 0;
+            width: 100%;
+        }
+        .gallery {
+            text-align: center;
+            padding-top: 35px;
+            margin: 40px auto;
+            max-width: 1400px;
+        }
+        .gallery-container {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 10px; /* A képek közötti távolság */
+        }
+        .gallery img {
+            width: calc(16.66% - 10px); /* Három kép egymás mellett a távolsággal együtt */
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.356);
+        }
+        .gallery2 {
+            text-align: center;
+            margin: 10px auto;
+            max-width: 1400px;
+        }
+        .gallery2-container {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 10px; /* A képek közötti távolság */
+        }
+        .gallery2 img {
+            width: calc(33.33% - 10px); /* Három kép egymás mellett a távolsággal együtt */
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.356);
+        }
+        .gallery3 {
+            text-align: center;
+            margin: 10px auto;
+            max-width: 1400px;
+        }
+        .gallery3-container {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 10px; /* A képek közötti távolság */
+        }
+        .gallery3 img {
+            width: calc(16.66% - 10px); /* Három kép egymás mellett a távolsággal együtt */
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.356);
+        }
+        .gallery4 {
+            text-align: center;
+            margin: 10px auto;
+            max-width: 1400px;
+        }
+        .gallery4-container {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 10px; /* A képek közötti távolság */
+        }
+        .gallery4 img {
+            width: calc(33.33% - 10px); /* Három kép egymás mellett a távolsággal együtt */
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.356);
+        }
+        .gallery button {
+            display: block;
+            background-color: #3620ffa7;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            text-transform: uppercase;
+            margin: 20px auto 0 auto;
+            border-radius: 20px;
+        }
+        footer {
+            background-color: #272727;
+            border-top: 1px solid #919191;
+            padding: 10px;
+            margin: 50px;
+            text-align: left;
+            position: relative;
+            min-height: 40px;
+            max-height: 50px;
+        }
+        footer .contact-info {
+            display: inline-block;
+            text-align: left;
+        }
+        footer .contact-info2 {
+            display: flex;
+            align-items: right;
+            text-align: right;
+            justify-content: flex-end;
+            right: 20px;
+            margin-top:-45px;
+        }
+        footer .social-media {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            position: absolute;
+            bottom: -10px;
+            right: 20px;
+        }
+        footer .social-media a {
+            margin-left: 10px;
+            text-decoration: none;
+            color: #ffffff;
+        }
+        footer .social-media a i {
+            font-size: 35px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="index.html">
+                <img src="logowhite.png" alt="Logo 1">
+            </a>
+        </div>
+        <div class="social-media">
+            <a href="https://www.instagram.com/odor.marton_photography/" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.facebook.com/profile.php?id=61555350149675" target="_blank"><i class="fab fa-facebook"></i></a>
+        </div>
+    </header>
+        <div class="gallery">
+            <h2>Galéria</h2>
+            <div class="gallery-container">
+                <img src="image1.jpg" alt="Photo 1">
+                <img src="image2.JPG" alt="Photo 2">
+                <img src="image3.jpg" alt="Photo 3">
+                <img src="image4.JPG" alt="Photo 4">
+                <img src="image5.JPG" alt="Photo 5">
+                <img src="image6.JPG" alt="Photo 6">
+            </div>
+            <div class="gallery2">
+            <div class="gallery2-container">
+                <img src="image7.jpg" alt="Photo 7">
+                <img src="image8.JPG" alt="Photo 8">
+                <img src="image9.JPG" alt="Photo 9">
+            </div>
+        <div class="gallery3">
+            <div class="gallery3-container">
+                <img src="image10.JPG" alt="Photo 10">
+                <img src="image11.JPG" alt="Photo 11">
+                <img src="image12.JPG" alt="Photo 12">
+                <img src="image13.JPG" alt="Photo 13">
+                <img src="image14.JPG" alt="Photo 14">
+                <img src="image15.JPG" alt="Photo 15">
+            </div>
+            <div class="gallery4">
+            <div class="gallery4-container">
+                <img src="image16.jpg" alt="Photo 16">
+                <img src="image17.JPG" alt="Photo 17">
+                <img src="image18.JPG" alt="Photo 18">
+            </div>
+        </div>
+    </div>
+    <footer>
+        <div class="contact-info">
+            <p>Kapcsolat: </p>
+            <p>Instagram</p>
+            <p>Facebook</p>
+        </div>
+        <div class="contact-info2">
+            <p>© Ódor Márton</p>
+        </div>
+        <div class="social-media">
+            <a href="https://www.instagram.com/odor.marton_photography/" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.facebook.com/profile.php?id=61555350149675" target="_blank"><i class="fab fa-facebook"></i></a>
+        </div>
+    </footer>
+</body>
+</html>

@@ -25,7 +25,7 @@
             background-color: #000000;
             border-bottom: 1px solid #343434;
             z-index: 1000;
-            max-height: 35px;
+            /*max-height: 35px;*/
         }
         header .logo {
             font-size: 30px;
@@ -93,7 +93,6 @@
             text-align: left;
             position: relative;
             min-height: 40px;
-            max-height: 50px;
         }
         footer .contact-info {
             display: inline-block;
@@ -101,15 +100,14 @@
         }
         footer .contact-info2 {
             display: flex;
-            align-items: right;
-            text-align: right;
+            align-items: flex-end;
             justify-content: flex-end;
             right: 20px;
-            margin-top:-45px;
+            margin-top: -45px;
         }
         footer .social-media {
             display: flex;
-            align-items: center;
+            align-items: right;
             justify-content: flex-end;
             position: absolute;
             bottom: -10px;
@@ -119,9 +117,13 @@
             margin-left: 10px;
             text-decoration: none;
             color: #ffffff;
+            align-items: right;
+
         }
         footer .social-media a i {
             font-size: 35px;
+            align-items: right;
+
         }
         @media (max-width: 768px) {
             header {
@@ -158,13 +160,13 @@
                 margin: 20px 10px;
             }
             footer .contact-info2 {
-                margin-top: 10px;
+                margin-top: 0px;
                 text-align:left;
             }
             footer .social-media {
                 position: static;
                 justify-content: right;
-                margin-top: 10px;
+                margin-top: 0px;
             }
             footer .social-media a {
                 justify-content: right;

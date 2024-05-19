@@ -133,25 +133,40 @@
             background-color: #272727;
             border-top: 1px solid #919191;
             padding: 10px;
-            margin: 50px 0 0 0;
-            text-align: center;
+            margin: 50px;
+            text-align: left;
             position: relative;
+            min-height: 40px;
         }
-        footer .contact-info, footer .contact-info2 {
-            display: block;
-            margin-bottom: 10px;
+        footer .contact-info {
+            display: inline-block;
+            text-align: left;
+        }
+        footer .contact-info2 {
+            display: flex;
+            align-items: flex-end;
+            justify-content: flex-end;
+            right: 20px;
+            margin-top: -45px;
         }
         footer .social-media {
             display: flex;
-            justify-content: center;
+            align-items: right;
+            justify-content: flex-end;
+            position: absolute;
+            bottom: -10px;
+            right: 20px;
         }
         footer .social-media a {
-            margin: 0 10px;
+            margin-left: 10px;
             text-decoration: none;
             color: #ffffff;
+            align-items: right;
+
         }
         footer .social-media a i {
-            font-size: 24px;
+            font-size: 35px;
+            align-items: right;
         }
 
         @media (max-width: 768px) {

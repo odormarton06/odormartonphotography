@@ -27,29 +27,50 @@
             z-index: 1000;
             /*max-height: 35px;*/
         }
-        header .logo {
-            font-size: 30px;
-            font-weight: bold;
-        }
-        header .logo a {
-            text-decoration: none;
-            color: #ffffff;
-        }
-        header .logo a img {
-            display: block;
-        }
-        header .social-media {
+        .logo {
             display: flex;
             align-items: center;
-            margin-right: 45px;
         }
-        header .social-media a {
-            margin-left: 15px;
+        .logo img{
+            height: 50px;
+        }
+        .nav-container {
+            flex-grow: 1;
+            display: flex;
+            justify-content: flex-end;
+            padding-top: 5px;
+            padding-right: 40px;
+        }
+        nav {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            flex-grow: 1;
+        }
+        nav a {
             text-decoration: none;
             color: #ffffff;
+            margin-left: 20px;
+            position: relative;
+            padding-bottom: 5px;
+            font-size: 16px;
+            text-transform: uppercase;
+            
+            transition: color 0.3s;
         }
-        header .social-media a i {
-            font-size: 30px;
+        nav a::after {
+            content: "";
+            position: absolute;
+            left: 50%;
+            bottom: 0;
+            width: 0;
+            height: 3px;
+            background: #3620ffa7;
+            transition: width 0.3s;
+            transform:translateX(-50%);
+        }
+        nav a:hover {
+            color: #ff0000
         }
         .content {
             padding-top: 80px;
@@ -58,7 +79,7 @@
         }
         .about-me {
             position: static;
-            background: url('background_5.jpg') no-repeat center center;
+            background: url('background.jpg') no-repeat center center;
             background-size: cover;
             width: 100%;
             height: 100vh;
@@ -70,6 +91,20 @@
             box-sizing: border-box;
             padding: 20px;
             margin-top: -5px;
+            transition: background-image 3s ease-in-out;
+            /* Alapértelmezett háttérkép */
+        }
+        .fade-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            z-index: -1; /* A háttér alá helyezi */
+            opacity: 0;
+            transition: opacity 3s ease-in-out;
         }
         .about-me h1 {
             width: calc(33.33% - 20px);
@@ -87,7 +122,7 @@
             text-align: left;
         }
         .about-me button {
-            background-color: #3620ffa7;
+            background-color: #000000a7;
             color: #fff;
             border: none;
             padding: 10px 20px;
@@ -97,40 +132,167 @@
             margin-left: 50px;
             /*margin-right: 275px;*/
             border-radius: 20px;
+            transition: color 0.3s;
+            transition: background-color 0.3s;
         }
+        .about-me button:hover{
+            color: #ffffff;
+            background-color: #ff0000a7
+        }
+        .news-section {
+            text-align: center;
+            margin: 10px 0;
+            color: #ffffff;
+            font-size: 24px;
+        }
+        .news-container {
+            display: flex;
+            justify-content: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .news-item {
+            width: 35%;
+            background-color: #7d7d7d;
+            color:#000000;
+            padding: 20px;
+            margin: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            transition: all 0.3s ease;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+            white-space: normal;
+        }
+        .news-item h1 {
+            font-size: 25px;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+            white-space: normal;
+        }
+        .news-item p {
+            font-size: 16px;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+            white-space: normal;
+        }
+        .left-news:hover, .right-news:hover, .center-news:hover {
+            background-color:#ffffff;
+        }
+        .left-news img {
+            width: 100%; /* A kép szélessége igazodik a hírblokkhoz */
+            height: auto;
+            margin-top: 10px; /* Távolság a felső elemtől */
+            border-radius: 5px; /* Lekerekített sarkok */
+            margin-bottom: -6px;
+        }
+        /*.left-news h2 {
+            font-size: 10px;
+            word-wrap: break-word;
+            margin-top: 6px;
+            margin-bottom: -16px;
+        }*/
+        .left-news button {
+            background-color: #000000a7;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            text-transform: uppercase;
+            margin-top: 20px;
+            border-radius: 20px;
+            transition: color 0.3s, background-color 0.3s;
+            align-self: center; /* Középre igazítja a gombot */
+        }
+        .left-news button:hover {
+            color: #ffffff;
+            background-color: #ff0000a7;
+        }
+        .center-news img {
+            width: 100%; /* A kép szélessége igazodik a hírblokkhoz */
+            height: auto;
+            margin-top: 10px; /* Távolság a felső elemtől */
+            border-radius: 5px; /* Lekerekített sarkok */
+            margin-bottom: -6px;
+        }
+        .center-news h2 {
+            font-size: 10px;
+            word-wrap: break-word;
+            margin-top: 6px;
+            margin-bottom: -16px;
+        }
+        .center-news button {
+            background-color: #000000a7;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            text-transform: uppercase;
+            margin-top: 20px;
+            border-radius: 20px;
+            transition: color 0.3s, background-color 0.3s;
+            align-self: center; /* Középre igazítja a gombot */
+        }
+        .center-news button:hover {
+            color: #ffffff;
+            background-color: #ff0000a7;
+        }
+        .right-news img {
+            width: 100%; /* A kép szélessége igazodik a hírblokkhoz */
+            height: auto;
+            margin-top: 10px; /* Távolság a felső elemtől */
+            border-radius: 5px; /* Lekerekített sarkok */
+            margin-bottom: -6px;
+        }
+        .right-news h2 {
+            font-size: 10px;
+            word-wrap: break-word;
+            margin-top: 6px;
+            margin-bottom: -16px;
+        }
+        .right-news button {
+            background-color: #000000a7;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            text-transform: uppercase;
+            margin-top: 20px;
+            border-radius: 20px;
+            transition: color 0.3s, background-color 0.3s;
+            align-self: center; /* Középre igazítja a gombot */
+        }
+        .right-news button:hover {
+            color: #ffffff;
+            background-color: #ff0000a7;
+        }
+
         .gallery {
             text-align: center;
             margin: 40px auto;
             max-width: 1400px;
+            position: relative;
+            overflow: hidden;
         }
-        .gallery-container {
-            display: flex;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            gap: 10px;
+        .gallery h2 {
+            color:#ffffff;
+            text-align: center;
+            margin-top: 0px;
+            margin-bottom: 20px;
+            font-size: 32px;
+            text-transform: upperscale;
+            letter-spacing: 2px;
         }
         .gallery img {
-            width: calc(16.66% - 10px);
-            box-shadow: 0 0 10px rgba(255, 255, 255, 0.356);
-        }
-        .gallery2 {
-            text-align: center;
-            margin: 10px auto;
-            max-width: 1400px;
-        }
-        .gallery2-container {
-            display: flex;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            gap: 10px;
-        }
-        .gallery2 img {
-            width: calc(33.33% - 10px);
-            box-shadow: 0 0 10px rgba(255, 255, 255, 0.356);
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain; /* Igazítás mind álló, mind fekvő képekhez */
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(255, 255, 255, 0.356);
         }
         .gallery button {
             display: block;
-            background-color: #3620ffa7;
+            background-color: #000000a7;
             color: #fff;
             border: none;
             padding: 10px 20px;
@@ -138,33 +300,70 @@
             text-transform: uppercase;
             margin: 20px auto 0 auto;
             border-radius: 20px;
+            transition: color 0.3s;
+            transition: background-color 0.3s;
         }
+        .gallery button:hover{
+            color: #ffffff;
+            background-color: #ff0000a7
+        }
+        .slider {
+            position: relative;
+            width: 100%;
+            height: 600px; /* A képek magasságának beállítása */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .slider img {
+            position: absolute;
+            transition: opacity 2s ease-in-out;
+            opacity: 0;
+        }
+        .slider img.active {
+            opacity: 1;
+        }
+
+        /*.gallery button {
+            display: block;
+            background-color: #000000a7;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            text-transform: uppercase;
+            margin: 20px auto 0 auto;
+            border-radius: 20px;
+            transition: color 0.3s;
+            transition: background-color 0.3s;
+        }
+        .gallery button:hover{
+            color: #ffffff;
+            background-color: #ff0000a7
+        }*/
         footer {
             background-color: #272727;
             border-top: 1px solid #919191;
-            padding: 10px;
+            padding: 0px;
             margin: 50px;
-            text-align: left;
+            text-align: center;
             position: relative;
-            min-height: 40px;
+            min-height: 20px;
+            margin-bottom: 0px;
         }
         footer .contact-info {
-            display: inline-block;
-            text-align: left;
-        }
-        footer .contact-info2 {
-            display: flex;
-            align-items: flex-end;
-            justify-content: flex-end;
-            right: 20px;
-            margin-top: -45px;
+            text-align: center;
+            padding-top: 30px;
+            margin-bottom: -5px;
+            color:#ffffffb7;
+            font-size: 12px;
         }
         footer .social-media {
             display: flex;
             align-items: right;
             justify-content: flex-end;
             position: absolute;
-            bottom: -10px;
+            bottom: 6px;
             right: 20px;
         }
         footer .social-media a {
@@ -172,73 +371,81 @@
             text-decoration: none;
             color: #ffffff;
             align-items: right;
-
+            transition: color 0.3s ease-in-out;
+        }
+        .social-media a:hover{
+            color: #ff0000;
         }
         footer .social-media a i {
             font-size: 35px;
             align-items: right;
-
         }
 
         @media (max-width: 768px) {
-            header {
-                flex-direction: row;
-                padding: 10px;
-            }
-            header .logo {
-                margin-bottom: 10px;
-                align-items: left;
-            }
-            /*header .social-media {
-                margin-right: 0;
-                justify-content: space-around;
-                align-items: right;
-            }*/
-            header .social-media {
-            display: flex;
-            align-items: right;
-            /*margin-right: 45px;*/
-            }
-            header .social-media a {
-            margin-left: 15px;
-            text-decoration: none;
-            color: #ffffff;
-            }
-            .about-me h1, .about-me p/*, .about-me button */{
-                width: 100%;
-                text-align: left;
-                margin-left: 0;
-                padding: 0;
-            }
-            .about-me button{
-                margin-left: 0px;
-            }
-            .gallery-container, .gallery2-container {
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-            }
-            .gallery img, .gallery2 img {
-                width: 80%;
-                margin-bottom: 10px;
-            }
-            footer {
-                text-align: left;
-                margin: 20px 10px;
-            }
-            footer .contact-info2 {
-                margin-top: px;
-                text-align:left;
-            }
-            footer .social-media {
-                position: static;
-                justify-content: right;
-                margin-top: 0px;
-            }
-            footer .social-media a {
-                justify-content: right;
-            }
+        /* Header */
+        header {
+            flex-direction: column;
+            padding: 10px;
+            justify-content: center;
         }
+        
+        /* Menü átalakítása hamburger ikonra mobilon */
+        .nav-container {
+            display: none; /* Alapból elrejtjük */
+        }
+
+        .menu-icon {
+            display: block;
+            cursor: pointer;
+            font-size: 24px;
+            margin-right: 20px;
+        }
+
+        /* Menüpontok megjelenítése kattintásra */
+        .menu-open .nav-container {
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            background-color: #000;
+        }
+        
+        /* About me szekció */
+        .about-me h1, .about-me p {
+            width: 100%;
+            padding: 10px;
+            font-size: 20px;
+        }
+        
+        .about-me button {
+            margin-left: 0;
+            margin-right: 0;
+        }
+
+        /* News section egy oszlopos megjelenítés */
+        .news-container {
+            flex-direction: column;
+        }
+        
+        .news-item {
+            width: 90%;
+            margin: 10px auto;
+        }
+
+        /* Galéria */
+        .gallery img {
+            width: 90%;
+            margin: 10px auto;
+        }
+        
+        /* Footer igazítása */
+        footer {
+            margin: 10px 5px;
+        }
+
+        .social-media {
+            justify-content: center;
+        }
+    }
     </style>
 </head>
 <body>
@@ -248,44 +455,129 @@
                 <img src="logowhite.png" alt="Logo 1">
             </a>
         </div>
-        <div class="social-media">
-            <a href="https://www.instagram.com/odor.marton_photography/" target="_blank"><i class="fab fa-instagram"></i></a>
-            <a href="https://www.facebook.com/profile.php?id=61555350149675" target="_blank"><i class="fab fa-facebook"></i></a>
+        <div class="nav-container">
+            <nav>
+                <a href="index.html">Kezdőlap</a>
+                <a href="rolam.html">Rólam</a>
+                <a href="galeria.html">Galéria</a>
+                <a href="kapcsolat.html">Kapcsolat</a>
+            </nav>
         </div>
+
+
     </header>
     <div class="content">
-        <div class="about-me">
+        <div class="about-me" id="aboutMeSection">
+            <div class="fade-background" id="fadeBackground"></div>
             <h1>Szia! Én Márton vagyok</h1>
             <p>egy szenvedélyes fotós, aki szeret pillanatokat megörökíteni. Az objektív mögött megtalálod azt a lelkes embert, aki mindent megtesz azért, hogy minden pillanat varázslatos és emlékezetes legyen. Az alkotás számomra nem csak munka, hanem egy élmény, ahol a kreativitás és a technikai hozzáértés találkozik...</p>
             <button onclick="location.href='rolam.html'">Rólam</button>
         </div>
+        <div class="menu-icon" onclick="toggleMenu()">
+            <i class="fas fa-bars"></i>
+        </div>
+        
+        <script>
+        function toggleMenu() {
+            const header = document.querySelector('header');
+            header.classList.toggle('menu-open');
+        }
+        </script>
+        <script>
+            // Képek listája
+            const backgrounds = [
+                'background.jpg',
+                'background_1.jpg',
+                'background_2.jpg',
+                'background_3.jpg',
+                'background_4.jpg',
+                'background_5.jpg'
+            ];
+    
+            let currentIndex = 0;
+    
+            // Háttérkép váltás funkció
+            function changeBackground() {
+                const aboutMeSection = document.getElementById('aboutMeSection');
+                aboutMeSection.style.backgroundImage = `url('${backgrounds[currentIndex]}')`;
+    
+                // Következő kép
+                currentIndex = (currentIndex + 1) % backgrounds.length;
+            }
+    
+            // Első váltás azonnal, majd ismétlés 15 másodpercenként
+            changeBackground();
+            setInterval(changeBackground, 6000); // 15000 ms = 15 másodperc
+        </script>
+        
+        <div class="news-section">
+            <h2>Aktualitások</h2>
+            <div class="news-container">
+                <div class="news-item left-news">
+                    <h1>Bal oldalsó cím</h1>
+                    <p>Ez a bal oldali szöveg, de mivel nincs kedvem tovább írni, nem is fogom, mert ez csak egy próba.</p>
+                    <img src="image30.jpg" alt="Gyor Rally LADA">
+
+                    <button onclick="location.href='hirek1.html'">tovább</button>
+                </div>
+                <div class="news-item center-news">
+                    <h1>Középső cím</h1>
+                    <p>Ez a középső szöveg, de mivel nincs kedvem tovább írni, nem is fogom, mert ez csak egy próba.</p>
+                    <img src="image17.jpg" alt="Csuszka">
+
+                    <button onclick="location.href='hirek2.html'">tovább</button>
+                </div>
+                <div class="news-item right-news">
+                    <h1>Jobb oldalsó cím</h1>
+                    <p>Ez a jobb oldali szöveg, de mivel nincs kedvem tovább írni, nem is fogom, mert ez csak egy próba.</p>
+                    <img src="image27.jpg" alt="Maria-Gern">
+
+                    <button onclick="location.href='hirek3.html'">tovább</button>
+                </div>
+            </div>
+        </div>
+
         <div class="gallery">
             <h2>Galéria</h2>
-            <div class="gallery-container">
-                <img src="image1.jpg" alt="Photo 1">
-                <img src="image2.JPG" alt="Photo 2">
-                <img src="image3.jpg" alt="Photo 3">
-                <img src="image4.JPG" alt="Photo 4">
-                <img src="image5.JPG" alt="Photo 5">
-                <img src="image6.JPG" alt="Photo 6">
+            <div class="slider">
+                <img src="image1.jpg" class="active" alt="Kép 1">
+                <img src="image2.jpg" alt="Kép 2">
+                <img src="image3.jpg" alt="Kép 3">
+                <img src="image4.jpg" alt="Kép 4">
+                <img src="image5.jpg" alt="Kép 5">
+                <img src="image6.jpg" alt="Kép 6">
+                <img src="image7.jpg" alt="Kép 7">
+                <img src="image8.jpg" alt="Kép 8">
+                <img src="image9.jpg" alt="Kép 9">
+                <img src="image10.jpg" alt="Kép 10">
+                <img src="image11.jpg" alt="Kép 11">
+                <img src="image12.jpg" alt="Kép 12">
+                <img src="image13.jpg" alt="Kép 13">
+                <img src="image14.jpg" alt="Kép 14">
+                <img src="image15.jpg" alt="Kép 15">
+                <img src="image16.jpg" alt="Kép 16">
+                <img src="image17.jpg" alt="Kép 17">
+                <img src="image18.jpg" alt="Kép 18">
+                <img src="image19.jpg" alt="Kép 19">
+                <img src="image20.jpg" alt="Kép 20">
+                <img src="image21.jpg" alt="Kép 21">
+                <img src="image22.jpg" alt="Kép 22">
+                <img src="image23.jpg" alt="Kép 23">
+                <img src="image24.jpg" alt="Kép 24">
+                <img src="image25.jpg" alt="Kép 25">
+                <img src="image26.jpg" alt="Kép 26">
+                <img src="image27.jpg" alt="Kép 27">
+                <img src="image28.jpg" alt="Kép 28">
+                <img src="image29.jpg" alt="Kép 29">
+                <img src="image30.jpg" alt="Kép 30">
+
             </div>
-            <div class="gallery2">
-                <div class="gallery2-container">
-                    <img src="image7.jpg" alt="Photo 7">
-                    <img src="image8.JPG" alt="Photo 8">
-                    <img src="image9.JPG" alt="Photo 9">
-                </div>
                 <button onclick="location.href='galeria.html'">Tovább a Galériához</button>
             </div>
         </div>
     <footer>
         <div class="contact-info">
-            <p>Kapcsolat: </p>
-            <p>Instagram</p>
-            <p>Facebook</p>
-        </div>
-        <div class="contact-info2">
-            <p>© Ódor Márton</p>
+            <p>© 2024 Ódor Márton. Minden jog fenntartva.</p>
         </div>
         <div class="social-media">
             <a href="https://www.instagram.com/odor.marton_photography/" target="_blank"><i class="fab fa-instagram"></i></a>
@@ -293,5 +585,20 @@
         </div>
     </footer>
     <div class="spacer"></div>
+
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slider img');
+        const totalSlides = slides.length;
+
+        function showNextSlide() {
+            slides[currentSlide].classList.remove('active');
+            currentSlide = (currentSlide + 1) % totalSlides;
+            slides[currentSlide].classList.add('active');
+        }
+
+        // 5 másodpercenként vált
+        setInterval(showNextSlide, 6000);
+    </script>
 </body>
 </html>

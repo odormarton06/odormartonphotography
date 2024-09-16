@@ -27,179 +27,286 @@
             z-index: 1000;
             /*max-height: 35px;*/
         }
-        header .logo {
-            font-size: 30px;
-            font-weight: bold;
-        }
-        header .logo a {
-            text-decoration: none;
-            color: #ffffff;
-        }
-        header .logo a img {
-            display: block;
-        }
-        header .social-media {
+        .logo {
             display: flex;
             align-items: center;
-            margin-right: 45px;
         }
-        header .social-media a {
-            margin-left: 15px;
+        .logo img{
+            height: 50px;
+        }
+        .nav-container {
+            flex-grow: 1;
+            display: flex;
+            justify-content: flex-end;
+            padding-top: 5px;
+            padding-right: 40px;
+        }
+        nav {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            flex-grow: 1;
+        }
+        nav a {
             text-decoration: none;
             color: #ffffff;
+            margin-left: 20px;
+            position: relative;
+            padding-bottom: 5px;
+            font-size: 16px;
+            text-transform: uppercase;
+            
+            transition: color 0.3s;
         }
-        header .social-media a i {
-            font-size: 30px;
+        nav a::after {
+            content: "";
+            position: absolute;
+            left: 50%;
+            bottom: 0;
+            width: 0;
+            height: 3px;
+            background: #3620ffa7;
+            transition: width 0.3s;
+            transform:translateX(-50%);
+        }
+        nav a:hover {
+            color: #ff0000
+        }
+        .text {
+            text-align: center;
+            margin-top: 120px;
+            position: relative;
+            overflow: hidden;
+            /*text-transform: uppercase;*/
+        }
+        .text h1 {
+            color:#ffffff;
+            text-align: center;
+            margin-top: 0px;
+            margin-bottom: 0px;
+            font-size: 36px;
+            letter-spacing: 2px;
         }
         .content {
-            padding-top: 80px;
-            margin: 0;
+            padding-top: 10px;
+            margin-top: -20px;
             width: 100%;
-        }
-        .gallery {
             text-align: center;
-            padding-top: 35px;
-            margin: 40px auto;
-            max-width: 1400px;
         }
         .gallery-container {
             display: flex;
             flex-wrap: wrap;
             justify-content: space-between;
-            gap: 10px;
-        }
-        .gallery img {
-            width: calc(16.66% - 10px);
-            box-shadow: 0 0 10px rgba(255, 255, 255, 0.356);
-        }
-        .gallery2 {
-            text-align: center;
-            margin: 10px auto;
-            max-width: 1400px;
-        }
-        .gallery2-container {
-            margin-top: -30px;
-            display: flex;
-            justify-content: space-between;
-            flex-wrap: wrap;
             gap: 10px; /* A képek közötti távolság */
+            margin: 40px auto;
+            max-width: 1400px; /* A galéria maximális szélessége */
         }
-        .gallery2 img {
-            width: calc(33.33% - 10px); /* Három kép egymás mellett a távolsággal együtt */
+        .gallery-container a {
+            margin-top: 20px;
+            flex-basis: calc(16.66% - 10px); /* Három kép egy sorban */
+            box-sizing: border-box;
+            display: inline-block;
+        }
+        .gallery-container img {
+            width: 100%; /* A képek igazodjanak a szülő elemükhöz */
+            height: auto;
             box-shadow: 0 0 10px rgba(255, 255, 255, 0.356);
+            transition: transform 0.3s ease; /* Animáció a hover effektushoz */
+            border-radius: 10px;
         }
-        .gallery3 {
-            text-align: center;
-            margin: 10px auto;
-            max-width: 1400px;
+        .gallery-container img:hover {
+            transform: scale(1.05); /* Enyhe nagyítás hover esetén */
         }
-        .gallery3-container {
+        .gallery-container2 {
             display: flex;
-            justify-content: space-between;
             flex-wrap: wrap;
+            justify-content: space-between;
             gap: 10px; /* A képek közötti távolság */
+            margin: 40px auto;
+            max-width: 1400px; /* A galéria maximális szélessége */
         }
-        .gallery3 img {
-            width: calc(16.66% - 10px); /* Három kép egymás mellett a távolsággal együtt */
+        .gallery-container2 a {
+            margin-top: -32px;
+            flex-basis: calc(33.33% - 10px); /* Három kép egy sorban */
+            box-sizing: border-box;
+            display: inline-block;
+        }
+        .gallery-container2 img {
+            width: 100%; /* A képek igazodjanak a szülő elemükhöz */
+            height: auto;
             box-shadow: 0 0 10px rgba(255, 255, 255, 0.356);
+            transition: transform 0.3s ease; /* Animáció a hover effektushoz */
+            border-radius: 10px;
         }
-        .gallery4 {
-            text-align: center;
-            margin: 10px auto;
-            max-width: 1400px;
+        .gallery-container2 img:hover {
+            transform: scale(1.05); /* Enyhe nagyítás hover esetén */
         }
-        .gallery4-container {
+        .gallery-container3 {
             display: flex;
-            justify-content: space-between;
             flex-wrap: wrap;
+            justify-content: space-between;
             gap: 10px; /* A képek közötti távolság */
+            margin: 40px auto;
+            max-width: 1400px; /* A galéria maximális szélessége */
         }
-        .gallery4 img {
-            width: calc(33.33% - 10px); /* Három kép egymás mellett a távolsággal együtt */
+        .gallery-container3 a {
+            margin-top: -32px;
+            flex-basis: calc(16.66% - 10px); /* Három kép egy sorban */
+            box-sizing: border-box;
+            display: inline-block;
+        }
+        .gallery-container3 img {
+            width: 100%; /* A képek igazodjanak a szülő elemükhöz */
+            height: auto;
             box-shadow: 0 0 10px rgba(255, 255, 255, 0.356);
+            transition: transform 0.3s ease; /* Animáció a hover effektushoz */
+            border-radius: 10px;
         }
-        .gallery5 {
-            text-align: center;
-            margin: 10px auto;
-            max-width: 1400px;
+        .gallery-container3 img:hover {
+            transform: scale(1.05); /* Enyhe nagyítás hover esetén */
         }
-        .gallery5-container {
+        .gallery-container4 {
             display: flex;
             flex-wrap: wrap;
             justify-content: space-between;
-            gap: 10px;
-        }
-        .gallery5 img {
-            width: calc(16.66% - 10px);
-            box-shadow: 0 0 10px rgba(255, 255, 255, 0.356);
-        }
-        .gallery6 {
-            text-align: center;
-            margin: 10px auto;
-            max-width: 1400px;
-        }
-        .gallery6-container {
-            display: flex;
-            justify-content: space-between;
-            flex-wrap: wrap;
             gap: 10px; /* A képek közötti távolság */
+            margin: 40px auto;
+            max-width: 1400px; /* A galéria maximális szélessége */
         }
-        .gallery6 img {
-            width: calc(33.33% - 10px); /* Három kép egymás mellett a távolsággal együtt */
+        .gallery-container4 a {
+            margin-top: -32px;
+            flex-basis: calc(33.33% - 10px); /* Három kép egy sorban */
+            box-sizing: border-box;
+            display: inline-block;
+        }
+        .gallery-container4 img {
+            width: 100%; /* A képek igazodjanak a szülő elemükhöz */
+            height: auto;
             box-shadow: 0 0 10px rgba(255, 255, 255, 0.356);
+            transition: transform 0.3s ease; /* Animáció a hover effektushoz */
+            border-radius: 10px;
         }
-        .gallery7 {
-            text-align: center;
-            margin: 10px auto;
-            max-width: 1400px;
+        .gallery-container4 img:hover {
+            transform: scale(1.05); /* Enyhe nagyítás hover esetén */
         }
-        .gallery7-container {
+        .gallery-container5 {
             display: flex;
-            justify-content: space-between;
             flex-wrap: wrap;
+            justify-content: space-between;
             gap: 10px; /* A képek közötti távolság */
+            margin: 40px auto;
+            max-width: 1400px; /* A galéria maximális szélessége */
         }
-        .gallery7 img {
-            width: calc(33.33% - 10px); /* Három kép egymás mellett a távolsággal együtt */
+        .gallery-container5 a {
+            margin-top: -32px;
+            flex-basis: calc(16.66% - 10px); /* Három kép egy sorban */
+            box-sizing: border-box;
+            display: inline-block;
+        }
+        .gallery-container5 img {
+            width: 100%; /* A képek igazodjanak a szülő elemükhöz */
+            height: auto;
             box-shadow: 0 0 10px rgba(255, 255, 255, 0.356);
+            transition: transform 0.3s ease; /* Animáció a hover effektushoz */
+            border-radius: 10px;
         }
-        .gallery button {
+        .gallery-container5 img:hover {
+            transform: scale(1.05); /* Enyhe nagyítás hover esetén */
+        }
+        .gallery-container6 {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 10px; /* A képek közötti távolság */
+            margin: 40px auto;
+            max-width: 1400px; /* A galéria maximális szélessége */
+        }
+        .gallery-container6 a {
+            margin-top: -32px;
+            flex-basis: calc(33.33% - 10px); /* Három kép egy sorban */
+            box-sizing: border-box;
+            display: inline-block;
+        }
+        .gallery-container6 img {
+            width: 100%; /* A képek igazodjanak a szülő elemükhöz */
+            height: auto;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.356);
+            transition: transform 0.3s ease; /* Animáció a hover effektushoz */
+            border-radius: 10px;
+        }
+        .gallery-container6 img:hover {
+            transform: scale(1.05); /* Enyhe nagyítás hover esetén */
+        }
+
+
+
+
+        .modal {
+            display: none; 
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            text-align: center;
+            overflow: hidden;
+        }
+        .modal-content {
+            display: inline-block; /* Modal tartalom inline-blockra állítva */
+            position: relative;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.356); /* Árnyék a modal tartalomra vonatkozik */
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.9); /* Modal háttérszíne */
+        }
+        .modal img {
+            max-width: 90%;
+            max-height: 80%;
+            margin-top: 65px;
+            box-shadow: none; /* Képekhez tartozó árnyék eltávolítva */
+            object-fit: contain; /* Elkerüli a képek nyújtását */
+        }
+        .modal:target {
             display: block;
-            background-color: #3620ffa7;
-            color: #fff;
-            border: none;
-            padding: 10px 20px;
+        }
+        .close {
+            position: absolute;
+            top: 20px;
+            right: 35px;
+            color: white;
+            font-size: 40px;
+            font-weight: bold;
+            text-decoration: none;
+        }
+        .close:hover,
+        .close:focus {
+            color: #ff0000;
             cursor: pointer;
-            text-transform: uppercase;
-            margin: 20px auto 0 auto;
-            border-radius: 20px;
         }
         footer {
             background-color: #272727;
             border-top: 1px solid #919191;
-            padding: 10px;
+            padding: 0px;
             margin: 50px;
-            text-align: left;
+            text-align: center;
             position: relative;
-            min-height: 40px;
+            min-height: 20px;
+            margin-bottom: 0px;
         }
         footer .contact-info {
-            display: inline-block;
-            text-align: left;
-        }
-        footer .contact-info2 {
-            display: flex;
-            align-items: flex-end;
-            justify-content: flex-end;
-            right: 20px;
-            margin-top: -45px;
+            text-align: center;
+            padding-top: 30px;
+            margin-bottom: -5px;
+            color:#ffffffb7;
+            font-size: 12px;
         }
         footer .social-media {
             display: flex;
             align-items: right;
             justify-content: flex-end;
             position: absolute;
-            bottom: -10px;
+            bottom: 6px;
             right: 20px;
         }
         footer .social-media a {
@@ -207,7 +314,10 @@
             text-decoration: none;
             color: #ffffff;
             align-items: right;
-
+            transition: color 0.3s ease-in-out;
+        }
+        .social-media a:hover{
+            color: #ff0000;
         }
         footer .social-media a i {
             font-size: 35px;
@@ -261,7 +371,33 @@
             footer .social-media a {
                 justify-content: right;
             }
+        /*@media (max-width: 768px) {
+            .gallery-container a {
+                flex-basis: calc(50% - 10px); /* Két kép egymás mellett kisebb képernyőkön */
+           /* }
         }
+
+        @media (max-width: 480px) {
+            .gallery-container a {
+                flex-basis: 100%; /* Egy kép egy sorban nagyon kicsi képernyőkön */
+          /*  }
+        }*/
+
+        }
+.close {
+    position: absolute;
+    top: 20px;
+    right: 35px;
+    color: white;
+    font-size: 40px;
+    font-weight: bold;
+    text-decoration: none;
+}
+.close:hover,
+.close:focus {
+    color: #ff0000;
+    cursor: pointer;
+}
     </style>
 </head>
 <body>
@@ -271,85 +407,203 @@
                 <img src="logowhite.png" alt="Logo 1">
             </a>
         </div>
-        <div class="social-media">
-            <a href="https://www.instagram.com/odor.marton_photography/" target="_blank"><i class="fab fa-instagram"></i></a>
-            <a href="https://www.facebook.com/profile.php?id=61555350149675" target="_blank"><i class="fab fa-facebook"></i></a>
+        <div class="nav-container">
+            <nav>
+                <a href="index.html">Kezdőlap</a>
+                <a href="rolam.html">Rólam</a>
+                <a href="galeria.html">Galéria</a>
+                <a href="kapcsolat.html">Kapcsolat</a>
+            </nav>
         </div>
     </header>
+    <div class="text">
+        <h1>Galéria</h1>
+    </div>
     <div class="content">
-        <div class="gallery">
-            <h2>Galéria</h2>
-            <div class="gallery-container">
+        <div class="gallery-container">
+            <a href="#modal1"><img src="image1.jpg" alt="Photo 1"></a>
+            <a href="#modal2"><img src="image2.JPG" alt="Photo 2"></a>
+            <a href="#modal3"><img src="image3.jpg" alt="Photo 3"></a>
+            <a href="#modal4"><img src="image4.jpg" alt="Photo 4"></a>
+            <a href="#modal5"><img src="image5.jpg" alt="Photo 5"></a>
+            <a href="#modal6"><img src="image6.jpg" alt="Photo 6"></a>
+            <!-- Modalok a kinagyításhoz -->
+            <div id="modal1" class="modal">
+                <span class="close" onclick="window.location.href='#'">&times;</span>
                 <img src="image1.jpg" alt="Photo 1">
+            </div>
+            <div id="modal2" class="modal">
+                <span class="close" onclick="window.location.href='#'">&times;</span>
                 <img src="image2.JPG" alt="Photo 2">
+            </div>
+            <div id="modal3" class="modal">
+                <span class="close" onclick="window.location.href='#'">&times;</span>
                 <img src="image3.jpg" alt="Photo 3">
-                <img src="image4.JPG" alt="Photo 4">
+            </div>
+            <div id="modal4" class="modal">
+                <span class="close" onclick="window.location.href='#'">&times;</span>
+                <img src="image4.jpg" alt="Photo 4">
+            </div>
+            <div id="modal5" class="modal">
+                <span class="close" onclick="window.location.href='#'">&times;</span>
                 <img src="image5.JPG" alt="Photo 5">
-                <img src="image6.JPG" alt="Photo 6">
+            </div>
+            <div id="modal6" class="modal">
+                <span class="close" onclick="window.location.href='#'">&times;</span>
+                <img src="image6.jpg" alt="Photo 6">
             </div>
         </div>
-        <div class="gallery2">
-            <div class="gallery2-container">
+        <div class="gallery-container2">
+            <a href="#modal7"><img src="image7.jpg" alt="Photo 7"></a>
+            <a href="#modal8"><img src="image8.JPG" alt="Photo 8"></a>
+            <a href="#modal9"><img src="image9.jpg" alt="Photo 9"></a>
+            <div id="modal7" class="modal">
+                <span class="close" onclick="window.location.href='#'">&times;</span>
                 <img src="image7.jpg" alt="Photo 7">
+            </div>
+            <div id="modal8" class="modal">
+                <span class="close" onclick="window.location.href='#'">&times;</span>
                 <img src="image8.JPG" alt="Photo 8">
-                <img src="image9.JPG" alt="Photo 9">
+            </div>
+            <div id="modal9" class="modal">
+                <span class="close" onclick="window.location.href='#'">&times;</span>
+                <img src="image9.jpg" alt="Photo 9">
             </div>
         </div>
-        <div class="gallery3">
-            <div class="gallery3-container">
-                <img src="image10.JPG" alt="Photo 10">
+        <div class="gallery-container3">
+            <a href="#modal10"><img src="image10.jpg" alt="Photo 10"></a>
+            <a href="#modal11"><img src="image11.JPG" alt="Photo 11"></a>
+            <a href="#modal12"><img src="image12.jpg" alt="Photo 12"></a>
+            <a href="#modal13"><img src="image13.jpg" alt="Photo 13"></a>
+            <a href="#modal14"><img src="image14.jpg" alt="Photo 14"></a>
+            <a href="#modal15"><img src="image15.jpg" alt="Photo 15"></a>
+            <!-- Modalok a kinagyításhoz -->
+            <div id="modal10" class="modal">
+                <span class="close" onclick="window.location.href='#'">&times;</span>
+                <img src="image10.jpg" alt="Photo 10">
+            </div>
+            <div id="modal11" class="modal">
+                <span class="close" onclick="window.location.href='#'">&times;</span>
                 <img src="image11.JPG" alt="Photo 11">
-                <img src="image12.JPG" alt="Photo 12">
-                <img src="image13.JPG" alt="Photo 13">
+            </div>
+            <div id="modal12" class="modal">
+                <span class="close" onclick="window.location.href='#'">&times;</span>
+                <img src="image12.jpg" alt="Photo 12">
+            </div>
+            <div id="modal13" class="modal">
+                <span class="close" onclick="window.location.href='#'">&times;</span>
+                <img src="image13.jpg" alt="Photo 13">
+            </div>
+            <div id="modal14" class="modal">
+                <span class="close" onclick="window.location.href='#'">&times;</span>
                 <img src="image14.JPG" alt="Photo 14">
-                <img src="image15.JPG" alt="Photo 15">
+            </div>
+            <div id="modal15" class="modal">
+                <span class="close" onclick="window.location.href='#'">&times;</span>
+                <img src="image15.jpg" alt="Photo 15">
             </div>
         </div>
-        <div class="gallery4">
-            <div class="gallery4-container">
+        <div class="gallery-container4">
+            <a href="#modal16"><img src="image16.jpg" alt="Photo 16"></a>
+            <a href="#modal17"><img src="image17.JPG" alt="Photo 17"></a>
+            <a href="#modal18"><img src="image18.jpg" alt="Photo 18"></a>
+            <div id="modal16" class="modal">
+                <span class="close" onclick="window.location.href='#'">&times;</span>
                 <img src="image16.jpg" alt="Photo 16">
+            </div>
+            <div id="modal17" class="modal">
+                <span class="close" onclick="window.location.href='#'">&times;</span>
                 <img src="image17.JPG" alt="Photo 17">
-                <img src="image18.JPG" alt="Photo 18">
+            </div>
+            <div id="modal18" class="modal">
+                <span class="close" onclick="window.location.href='#'">&times;</span>
+                <img src="image18.jpg" alt="Photo 18">
             </div>
         </div>
-        <div class="gallery5">
-            <div class="gallery5-container">
+        <div class="gallery-container5">
+            <a href="#modal19"><img src="image19.jpg" alt="Photo 19"></a>
+            <a href="#modal20"><img src="image20.JPG" alt="Photo 20"></a>
+            <a href="#modal21"><img src="image21.jpg" alt="Photo 21"></a>
+            <a href="#modal22"><img src="image22.jpg" alt="Photo 22"></a>
+            <a href="#modal23"><img src="image23.jpg" alt="Photo 23"></a>
+            <a href="#modal24"><img src="image24.jpg" alt="Photo 24"></a>
+            <!-- Modalok a kinagyításhoz -->
+            <div id="modal19" class="modal">
+                <span class="close" onclick="window.location.href='#'">&times;</span>
                 <img src="image19.jpg" alt="Photo 19">
-                <img src="image20.jpg" alt="Photo 20">
+            </div>
+            <div id="modal20" class="modal">
+                <span class="close" onclick="window.location.href='#'">&times;</span>
+                <img src="image20.JPG" alt="Photo 20">
+            </div>
+            <div id="modal21" class="modal">
+                <span class="close" onclick="window.location.href='#'">&times;</span>
                 <img src="image21.jpg" alt="Photo 21">
+            </div>
+            <div id="modal22" class="modal">
+                <span class="close" onclick="window.location.href='#'">&times;</span>
                 <img src="image22.jpg" alt="Photo 22">
-                <img src="image23.jpg" alt="Photo 23">
+            </div>
+            <div id="modal23" class="modal">
+                <span class="close" onclick="window.location.href='#'">&times;</span>
+                <img src="image23.JPG" alt="Photo 23">
+            </div>
+            <div id="modal24" class="modal">
+                <span class="close" onclick="window.location.href='#'">&times;</span>
                 <img src="image24.jpg" alt="Photo 24">
             </div>
         </div>
-        <div class="gallery6">
-            <div class="gallery6-container">
+        <div class="gallery-container6">
+            <a href="#modal25"><img src="image25.jpg" alt="Photo 7"></a>
+            <a href="#modal26"><img src="image26.JPG" alt="Photo 8"></a>
+            <a href="#modal27"><img src="image27.jpg" alt="Photo 9"></a>
+            <div id="modal25" class="modal">
+                <span class="close" onclick="window.location.href='#'">&times;</span>
                 <img src="image25.jpg" alt="Photo 25">
-                <img src="image26.jpg" alt="Photo 26">
+            </div>
+            <div id="modal26" class="modal">
+                <span class="close" onclick="window.location.href='#'">&times;</span>
+                <img src="image26.JPG" alt="Photo 26">
+            </div>
+            <div id="modal27" class="modal">
+                <span class="close" onclick="window.location.href='#'">&times;</span>
                 <img src="image27.jpg" alt="Photo 27">
             </div>
         </div>
-        <div class="gallery7">
-            <div class="gallery7-container">
-                <img src="image28.jpg" alt="Photo 28">
-                <img src="image29.jpg" alt="Photo 29">
+        <div class="gallery-container6">
+            <a href="#modal28"><img src="image28.jpg" alt="Photo 28"></a>
+            <a href="#modal29"><img src="image29.JPG" alt="Photo 29"></a>
+            <a href="#modal30"><img src="image30.jpg" alt="Photo 30"></a>
+            <div id="modal28" class="modal">
+                <span class="close" onclick="window.location.href='#'">&times;</span>
+                <img src="image28.jpg" alt="Photo 25">
+            </div>
+            <div id="modal29" class="modal">
+                <span class="close" onclick="window.location.href='#'">&times;</span>
+                <img src="image29.JPG" alt="Photo 29">
+            </div>
+            <div id="modal30" class="modal">
+                <span class="close" onclick="window.location.href='#'">&times;</span>
                 <img src="image30.jpg" alt="Photo 30">
             </div>
         </div>
     </div>
     <footer>
         <div class="contact-info">
-            <p>Kapcsolat: </p>
-            <p>Instagram</p>
-            <p>Facebook</p>
-        </div>
-        <div class="contact-info2">
-            <p>© Ódor Márton</p>
+            <p>© 2024 Ódor Márton. Minden jog fenntartva.</p>
         </div>
         <div class="social-media">
             <a href="https://www.instagram.com/odor.marton_photography/" target="_blank"><i class="fab fa-instagram"></i></a>
             <a href="https://www.facebook.com/profile.php?id=61555350149675" target="_blank"><i class="fab fa-facebook"></i></a>
         </div>
     </footer>
+    <script>
+        // Bezárás esemény kezelés, ha valaki az overlay-re kattint
+        document.querySelectorAll('.modal').forEach(modal => {
+            modal.addEventListener('click', function() {
+                window.location.href = '#';
+            });
+        });
+    </script>
 </body>
 </html>

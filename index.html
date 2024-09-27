@@ -280,7 +280,6 @@
             margin-top: 0px;
             margin-bottom: 20px;
             font-size: 32px;
-            text-transform: upperscale;
             letter-spacing: 2px;
         }
         .gallery img {
@@ -381,20 +380,58 @@
             align-items: right;
         }
 
-        @media (max-width: 768px) {
+        @media (max-width: 1090px) {
         /* Header */
+        .nav-container {
+            display: none;
+            flex-direction: column;
+
+            align-items: center;
+            position: absolute;
+            top: 60px;
+            right: 20px;
+            background-color: #0000009d;
+            width: auto;
+            text-align: justify;
+            padding: 40px;
+            /*padding: 10px;*/
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.197);
+            transition: max-height 0.3s ease;
+            max-height: 0;
+           /*overflow: hidden;*/
+        }
+
+        .nav-container.open {
+    display: block;
+    max-height: 500px;
+  }
+        
+        .hamburger {
+            display: block;
+            cursor: pointer;
+            font-size: 30px;
+            position: absolute;
+            right: 30px;
+            top: 20px;
+        }
         header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            /*
             flex-direction: column;
             padding: 10px;
-            justify-content: center;
+            justify-content: center;*/
         }
         
         /* Menü átalakítása hamburger ikonra mobilon */
-        .nav-container {
+       /* .nav-container {
             display: none; /* Alapból elrejtjük */
-        }
+        /*}*/
 
-        .menu-icon {
+       /* .menu-icon {
             display: block;
             cursor: pointer;
             font-size: 24px;
@@ -402,7 +439,7 @@
         }
 
         /* Menüpontok megjelenítése kattintásra */
-        .menu-open .nav-container {
+        /*.menu-open .nav-container {
             display: flex;
             flex-direction: column;
             text-align: center;
@@ -427,13 +464,13 @@
         }
         
         .news-item {
-            width: 90%;
+            width: 70%;
             margin: 10px auto;
         }
 
         /* Galéria */
         .gallery img {
-            width: 90%;
+            max-width: 75%;
             margin: 10px auto;
         }
         
@@ -464,19 +501,23 @@
                 <a href="kapcsolat.html">Kapcsolat</a>
             </nav>
         </div>
-        <div class="menu-icon" onclick="toggleMenu()"></div>
-            <i class="fas fa-bars"></i>
+        <div class="hamburger" id="hamburger-icon">
+            &#9776;
         </div>
-        
         <script>
-        function toggleMenu() {
-            const header = document.querySelector('header');
-            header.classList.toggle('menu-open');
-        }
-        </script>
-
-
+            const hamburgerIcon = document.getElementById('hamburger-icon');
+            const navigationMenu = document.querySelector('.nav-container');
+          
+            hamburgerIcon.addEventListener('click', () => {
+              if (navigationMenu.style.display === 'block') {
+                navigationMenu.style.display = 'none';
+              } else {
+                navigationMenu.style.display = 'block';
+              }
+            });
+          </script>
     </header>
+    
     <div class="content">
         <div class="about-me" id="aboutMeSection">
             <div class="fade-background" id="fadeBackground"></div>
@@ -601,5 +642,6 @@
         // 5 másodpercenként vált
         setInterval(showNextSlide, 6000);
     </script>
+    
 </body>
 </html>

@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kapcsolat</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #ffffff;
+            background-color: #272727;
+        }
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background-color: #000000;
+            border-bottom: 1px solid #343434;
+            z-index: 1000;
+            /*max-height: 35px;*/
+        }
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+        .logo img{
+            height: 50px;
+        }
+        .nav-container {
+            flex-grow: 1;
+            display: flex;
+            justify-content: flex-end;
+            padding-top: 5px;
+            padding-right: 40px;
+        }
+        nav {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            flex-grow: 1;
+        }
+        nav a {
+            text-decoration: none;
+            color: #ffffff;
+            margin-left: 20px;
+            position: relative;
+            padding-bottom: 5px;
+            font-size: 16px;
+            text-transform: uppercase;
+            
+            transition: color 0.3s;
+        }
+        nav a::after {
+            content: "";
+            position: absolute;
+            left: 50%;
+            bottom: 0;
+            width: 0;
+            height: 3px;
+            background: #3620ffa7;
+            transition: width 0.3s;
+            transform:translateX(-50%);
+        }
+        nav a:hover {
+            color: #ff0000
+        }
+        .content {
+            padding-top: 80px;
+            margin-top: -20px;
+            width: 100%;
+        }
+        .about-me {
+            position: static;
+            background: url('rolamfoto.jpg') no-repeat center top;
+            background-size: cover;
+            width: 100%;
+            height: 150vh;
+            color: rgb(0, 0, 0);
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: flex-start;
+            box-sizing: border-box;
+            padding: 20px;
+            margin-top: -5px;
+        }
+        .about-me h1 {
+            width: calc(50% - 20px); /* Egyharmad szélességű a bal oldalon */
+            padding: 25px 50px;
+            background-color: rgba(0, 0, 0, 0);
+            margin-top: 30px;
+            font-size: 40px;
+        }
+        .about-me p {
+            width: calc(33.33% - 20px); /* Egyharmad szélességű a bal oldalon */
+            padding: 0px 50px;
+            background-color: rgba(0, 0, 0, 0);
+            font-size: 19px;
+            margin-top: -30px;
+            text-align: left;
+            margin-bottom: -20px;
+        }
+        .social-media-contact {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            position: relative;
+        }
+        .social-media-contact a {
+            margin-top: 50px;
+            margin-left: 50px;
+            text-decoration: none;
+            color: #000000ca;
+            font-size: 18px;
+            transition: color 0.3s ease-in-out;
+            display: flex;
+            align-items: center;
+        }
+        .social-media-contact a:hover{
+            color: #ff0000;
+        }
+        .social-media-contact a i {
+            font-size: 35px;
+            /*align-items: left;*/
+            display: inline-block;
+            width: 35px;
+            height: 35px;
+            margin-right: 10px;
+        }
+
+        footer {
+            background-color: #272727;
+            border-top: 1px solid #919191;
+            padding: 0px;
+            margin: 50px;
+            text-align: center;
+            position: relative;
+            min-height: 20px;
+            margin-bottom: 0px;
+        }
+        footer .contact-info {
+            text-align: center;
+            padding-top: 30px;
+            margin-bottom: -5px;
+            color:#ffffffb7;
+            font-size: 12px;
+        }
+        footer .social-media {
+            display: flex;
+            align-items: right;
+            justify-content: flex-end;
+            position: absolute;
+            bottom: 6px;
+            right: 20px;
+        }
+        footer .social-media a {
+            margin-left: 10px;
+            text-decoration: none;
+            color: #ffffff;
+            align-items: right;
+            transition: color 0.3s ease-in-out;
+        }
+        .social-media a:hover{
+            color: #ff0000;
+        }
+        footer .social-media a i {
+            font-size: 35px;
+            align-items: right;
+        }
+
+        @media (max-width: 1090px) {
+        /* Header */
+        .nav-container {
+            display: none;
+            flex-direction: column;
+
+            align-items: center;
+            position: absolute;
+            top: 60px;
+            right: 20px;
+            background-color: #0000009d;
+            width: auto;
+            text-align: justify;
+            padding: 40px;
+            /*padding: 10px;*/
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: max-height 0.3s ease;
+            max-height: 0;
+           /*overflow: hidden;*/
+        }
+
+        .nav-container.open {
+    display: block;
+    max-height: 500px;
+  }
+        
+        .hamburger {
+            display: block;
+            cursor: pointer;
+            font-size: 30px;
+            position: absolute;
+            right: 20px;
+            top: 20px;
+        }
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            /*
+            flex-direction: column;
+            padding: 10px;
+            justify-content: center;*/
+        }
+        
+        /* About me szekció */
+        .about-me h1, .about-me p {
+            width: 60%;
+            padding: 10px;
+            font-size: 20px;
+        }
+        .social-media-contact {
+            margin-left: -50px;
+        }
+        
+        /* Footer igazítása */
+        footer {
+            margin: 10px 5px;
+        }
+
+        .social-media {
+            justify-content: center;
+        }
+    }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="index.html">
+                <img src="logowhite.png" alt="Logo 1">
+            </a>
+        </div>
+        <div class="nav-container">
+            <nav>
+                <a href="index.html">Kezdőlap</a>
+                <a href="rolam.html">Rólam</a>
+                <a href="galeria.html">Galéria</a>
+                <a href="kapcsolat.html">Kapcsolat</a>
+            </nav>
+        </div>
+        <div class="hamburger" id="hamburger-icon">
+            &#9776;
+        </div>
+        <script>
+            const hamburgerIcon = document.getElementById('hamburger-icon');
+            const navigationMenu = document.querySelector('.nav-container');
+          
+            hamburgerIcon.addEventListener('click', () => {
+              if (navigationMenu.style.display === 'block') {
+                navigationMenu.style.display = 'none';
+              } else {
+                navigationMenu.style.display = 'block';
+              }
+            });
+          </script>
+    </header>
+    <div class="content">
+        <div class="about-me">
+            <h1>Kapcsolat - Elérhetőségek</h1>
+            <p>Az alábbi elérhetőségeken bármikor megtalálsz, minden megkeresésre igyekszem minél hamarabb válaszolni:</p>
+            <div class="social-media-contact">
+                <a href="https://www.instagram.com/odor.marton_photography/" target="_blank">
+                    <i class="fab fa-instagram"></i> @odor.marton_photography
+                </a>
+                <a href="https://www.facebook.com/profile.php?id=61555350149675" target="_blank">
+                    <i class="fab fa-facebook"></i> Ódor Márton Photography
+                </a>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <div class="contact-info">
+            <p>© 2024 Ódor Márton. Minden jog fenntartva.</p>
+        </div>
+        <div class="social-media">
+            <a href="https://www.instagram.com/odor.marton_photography/" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.facebook.com/profile.php?id=61555350149675" target="_blank"><i class="fab fa-facebook"></i></a>
+        </div>
+    </footer>
+</body>
+</html>
